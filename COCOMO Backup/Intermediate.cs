@@ -164,5 +164,19 @@ namespace COCOMO_Backup
             ProjectAtt2_cmb.SelectedItem = "Nominal";
             ProjectAtt3_cmb.SelectedItem = "Nominal";
         }
+
+        private void Exit_btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+            
+
+            
+        }
+
+        private void Home_btn_Click(object sender, EventArgs e)
+        {
+            opening o = new opening();
+            o.Show();
+        }
     }
 }

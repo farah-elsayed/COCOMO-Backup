@@ -38,5 +38,10 @@ namespace COCOMO_Backup
             Intermediate i = new Intermediate();
             i.Show();
         }
+
+        private void ExitOP_btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
