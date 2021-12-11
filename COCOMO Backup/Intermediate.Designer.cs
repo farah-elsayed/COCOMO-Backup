@@ -33,7 +33,7 @@ namespace COCOMO_Backup
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.kloc2_txt = new System.Windows.Forms.TextBox();
-            this.Type2_txt = new System.Windows.Forms.ComboBox();
+            this.Type2_cmb = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.approxEff_txt = new System.Windows.Forms.TextBox();
@@ -82,6 +82,18 @@ namespace COCOMO_Backup
             this.ProAtt1_cmb = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.TimeL = new System.Windows.Forms.Label();
+            this.CalculateTime_btn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Time_txt = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.effortRes_txt = new System.Windows.Forms.TextBox();
+            this.type_lbl = new System.Windows.Forms.Label();
+            this.Calc_effort_btn = new System.Windows.Forms.Button();
+            this.Time_lbl = new System.Windows.Forms.Label();
+            this.Effort_lbl = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.Exit_btn = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -93,9 +105,20 @@ namespace COCOMO_Backup
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label28);
+            this.panel3.Controls.Add(this.Time_lbl);
+            this.panel3.Controls.Add(this.Effort_lbl);
+            this.panel3.Controls.Add(this.TimeL);
+            this.panel3.Controls.Add(this.CalculateTime_btn);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.Time_txt);
+            this.panel3.Controls.Add(this.label25);
+            this.panel3.Controls.Add(this.effortRes_txt);
+            this.panel3.Controls.Add(this.type_lbl);
+            this.panel3.Controls.Add(this.Calc_effort_btn);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.kloc2_txt);
-            this.panel3.Controls.Add(this.Type2_txt);
+            this.panel3.Controls.Add(this.Type2_cmb);
             this.panel3.Controls.Add(this.label24);
             this.panel3.Controls.Add(this.label23);
             this.panel3.Controls.Add(this.approxEff_txt);
@@ -107,9 +130,9 @@ namespace COCOMO_Backup
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(57, 70);
+            this.panel3.Location = new System.Drawing.Point(27, 70);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(658, 434);
+            this.panel3.Size = new System.Drawing.Size(1043, 596);
             this.panel3.TabIndex = 20;
             // 
             // label2
@@ -125,29 +148,29 @@ namespace COCOMO_Backup
             // kloc2_txt
             // 
             this.kloc2_txt.Font = new System.Drawing.Font("Ebrima", 12F);
-            this.kloc2_txt.Location = new System.Drawing.Point(244, 85);
+            this.kloc2_txt.Location = new System.Drawing.Point(239, 101);
             this.kloc2_txt.Name = "kloc2_txt";
-            this.kloc2_txt.Size = new System.Drawing.Size(147, 35);
+            this.kloc2_txt.Size = new System.Drawing.Size(182, 35);
             this.kloc2_txt.TabIndex = 30;
             // 
-            // Type2_txt
+            // Type2_cmb
             // 
-            this.Type2_txt.Font = new System.Drawing.Font("Ebrima", 12F);
-            this.Type2_txt.FormattingEnabled = true;
-            this.Type2_txt.Items.AddRange(new object[] {
+            this.Type2_cmb.Font = new System.Drawing.Font("Ebrima", 12F);
+            this.Type2_cmb.FormattingEnabled = true;
+            this.Type2_cmb.Items.AddRange(new object[] {
             "Organic",
             "Semi_detached",
             "Embedded"});
-            this.Type2_txt.Location = new System.Drawing.Point(244, 36);
-            this.Type2_txt.Name = "Type2_txt";
-            this.Type2_txt.Size = new System.Drawing.Size(147, 36);
-            this.Type2_txt.TabIndex = 27;
+            this.Type2_cmb.Location = new System.Drawing.Point(239, 36);
+            this.Type2_cmb.Name = "Type2_cmb";
+            this.Type2_cmb.Size = new System.Drawing.Size(182, 36);
+            this.Type2_cmb.TabIndex = 27;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Ebrima", 12F);
-            this.label24.Location = new System.Drawing.Point(19, 85);
+            this.label24.Location = new System.Drawing.Point(496, 108);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(60, 28);
             this.label24.TabIndex = 29;
@@ -157,7 +180,7 @@ namespace COCOMO_Backup
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Ebrima", 10.2F);
-            this.label23.Location = new System.Drawing.Point(518, 254);
+            this.label23.Location = new System.Drawing.Point(574, 512);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(120, 23);
             this.label23.TabIndex = 22;
@@ -166,7 +189,7 @@ namespace COCOMO_Backup
             // approxEff_txt
             // 
             this.approxEff_txt.Font = new System.Drawing.Font("Ebrima", 12F);
-            this.approxEff_txt.Location = new System.Drawing.Point(364, 251);
+            this.approxEff_txt.Location = new System.Drawing.Point(379, 509);
             this.approxEff_txt.Name = "approxEff_txt";
             this.approxEff_txt.Size = new System.Drawing.Size(134, 35);
             this.approxEff_txt.TabIndex = 21;
@@ -174,15 +197,15 @@ namespace COCOMO_Backup
             // IntialEst_txt
             // 
             this.IntialEst_txt.Font = new System.Drawing.Font("Ebrima", 12F);
-            this.IntialEst_txt.Location = new System.Drawing.Point(244, 196);
+            this.IntialEst_txt.Location = new System.Drawing.Point(239, 442);
             this.IntialEst_txt.Name = "IntialEst_txt";
-            this.IntialEst_txt.Size = new System.Drawing.Size(147, 35);
+            this.IntialEst_txt.Size = new System.Drawing.Size(182, 35);
             this.IntialEst_txt.TabIndex = 20;
             // 
             // ActualEff_txt
             // 
             this.ActualEff_txt.Font = new System.Drawing.Font("Ebrima", 12F);
-            this.ActualEff_txt.Location = new System.Drawing.Point(187, 251);
+            this.ActualEff_txt.Location = new System.Drawing.Point(202, 509);
             this.ActualEff_txt.Name = "ActualEff_txt";
             this.ActualEff_txt.Size = new System.Drawing.Size(122, 35);
             this.ActualEff_txt.TabIndex = 19;
@@ -191,7 +214,7 @@ namespace COCOMO_Backup
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Ebrima", 12F);
-            this.label22.Location = new System.Drawing.Point(17, 254);
+            this.label22.Location = new System.Drawing.Point(19, 516);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(147, 28);
             this.label22.TabIndex = 18;
@@ -201,7 +224,7 @@ namespace COCOMO_Backup
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Ebrima", 12F);
-            this.label5.Location = new System.Drawing.Point(332, 257);
+            this.label5.Location = new System.Drawing.Point(347, 512);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 28);
             this.label5.TabIndex = 17;
@@ -210,16 +233,16 @@ namespace COCOMO_Backup
             // EAF_txt
             // 
             this.EAF_txt.Font = new System.Drawing.Font("Ebrima", 12F);
-            this.EAF_txt.Location = new System.Drawing.Point(244, 141);
+            this.EAF_txt.Location = new System.Drawing.Point(239, 369);
             this.EAF_txt.Name = "EAF_txt";
-            this.EAF_txt.Size = new System.Drawing.Size(147, 35);
+            this.EAF_txt.Size = new System.Drawing.Size(182, 35);
             this.EAF_txt.TabIndex = 12;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Ebrima", 12F);
-            this.label7.Location = new System.Drawing.Point(17, 199);
+            this.label7.Location = new System.Drawing.Point(19, 449);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(205, 28);
             this.label7.TabIndex = 15;
@@ -232,9 +255,9 @@ namespace COCOMO_Backup
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(364, 342);
+            this.button2.Location = new System.Drawing.Point(720, 492);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(274, 49);
+            this.button2.Size = new System.Drawing.Size(292, 49);
             this.button2.TabIndex = 9;
             this.button2.Text = "Calculate Actual Effort";
             this.button2.UseVisualStyleBackColor = true;
@@ -244,7 +267,7 @@ namespace COCOMO_Backup
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Ebrima", 12F);
-            this.label4.Location = new System.Drawing.Point(19, 144);
+            this.label4.Location = new System.Drawing.Point(19, 369);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 28);
             this.label4.TabIndex = 8;
@@ -256,9 +279,9 @@ namespace COCOMO_Backup
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Location = new System.Drawing.Point(753, 23);
+            this.panel2.Location = new System.Drawing.Point(1076, 48);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(512, 618);
+            this.panel2.Size = new System.Drawing.Size(584, 618);
             this.panel2.TabIndex = 19;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -534,6 +557,7 @@ namespace COCOMO_Backup
             // 
             // HardAtt4_cmb
             // 
+            this.HardAtt4_cmb.Font = new System.Drawing.Font("Ebrima", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HardAtt4_cmb.FormattingEnabled = true;
             this.HardAtt4_cmb.Items.AddRange(new object[] {
             "Low",
@@ -547,6 +571,7 @@ namespace COCOMO_Backup
             // 
             // HardAtt3_cmb
             // 
+            this.HardAtt3_cmb.Font = new System.Drawing.Font("Ebrima", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HardAtt3_cmb.FormattingEnabled = true;
             this.HardAtt3_cmb.Items.AddRange(new object[] {
             "Low",
@@ -560,6 +585,7 @@ namespace COCOMO_Backup
             // 
             // HardAtt2_cmb
             // 
+            this.HardAtt2_cmb.Font = new System.Drawing.Font("Ebrima", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HardAtt2_cmb.FormattingEnabled = true;
             this.HardAtt2_cmb.Items.AddRange(new object[] {
             "Nominal",
@@ -604,6 +630,7 @@ namespace COCOMO_Backup
             // 
             // HardAtt1_cmb
             // 
+            this.HardAtt1_cmb.Font = new System.Drawing.Font("Ebrima", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HardAtt1_cmb.FormattingEnabled = true;
             this.HardAtt1_cmb.Items.AddRange(new object[] {
             "Nominal",
@@ -711,11 +738,12 @@ namespace COCOMO_Backup
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.Exit_btn);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(-4, 98);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1361, 631);
+            this.panel1.Size = new System.Drawing.Size(1773, 783);
             this.panel1.TabIndex = 21;
             // 
             // label1
@@ -730,15 +758,146 @@ namespace COCOMO_Backup
             this.label1.TabIndex = 22;
             this.label1.Text = "COCOMO Model";
             // 
+            // TimeL
+            // 
+            this.TimeL.AutoSize = true;
+            this.TimeL.Font = new System.Drawing.Font("Ebrima", 12F);
+            this.TimeL.Location = new System.Drawing.Point(-157, 518);
+            this.TimeL.Name = "TimeL";
+            this.TimeL.Size = new System.Drawing.Size(20, 28);
+            this.TimeL.TabIndex = 38;
+            this.TimeL.Text = "-";
+            // 
+            // CalculateTime_btn
+            // 
+            this.CalculateTime_btn.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalculateTime_btn.Image = ((System.Drawing.Image)(resources.GetObject("CalculateTime_btn.Image")));
+            this.CalculateTime_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CalculateTime_btn.Location = new System.Drawing.Point(635, 255);
+            this.CalculateTime_btn.Name = "CalculateTime_btn";
+            this.CalculateTime_btn.Size = new System.Drawing.Size(347, 60);
+            this.CalculateTime_btn.TabIndex = 37;
+            this.CalculateTime_btn.Text = "Calculate Time Development";
+            this.CalculateTime_btn.UseVisualStyleBackColor = true;
+            this.CalculateTime_btn.Click += new System.EventHandler(this.CalculateTime_btn_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Ebrima", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(488, 276);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 23);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "months";
+            // 
+            // Time_txt
+            // 
+            this.Time_txt.BackColor = System.Drawing.Color.White;
+            this.Time_txt.Enabled = false;
+            this.Time_txt.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time_txt.ForeColor = System.Drawing.Color.Black;
+            this.Time_txt.Location = new System.Drawing.Point(239, 268);
+            this.Time_txt.Name = "Time_txt";
+            this.Time_txt.Size = new System.Drawing.Size(182, 35);
+            this.Time_txt.TabIndex = 35;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Ebrima", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(488, 183);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(120, 23);
+            this.label25.TabIndex = 34;
+            this.label25.Text = "person-month";
+            // 
+            // effortRes_txt
+            // 
+            this.effortRes_txt.BackColor = System.Drawing.Color.White;
+            this.effortRes_txt.Enabled = false;
+            this.effortRes_txt.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.effortRes_txt.ForeColor = System.Drawing.Color.Black;
+            this.effortRes_txt.Location = new System.Drawing.Point(239, 174);
+            this.effortRes_txt.Name = "effortRes_txt";
+            this.effortRes_txt.Size = new System.Drawing.Size(182, 35);
+            this.effortRes_txt.TabIndex = 33;
+            // 
+            // type_lbl
+            // 
+            this.type_lbl.AutoSize = true;
+            this.type_lbl.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.type_lbl.Location = new System.Drawing.Point(-157, 442);
+            this.type_lbl.Name = "type_lbl";
+            this.type_lbl.Size = new System.Drawing.Size(20, 28);
+            this.type_lbl.TabIndex = 32;
+            this.type_lbl.Text = "-";
+            // 
+            // Calc_effort_btn
+            // 
+            this.Calc_effort_btn.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Calc_effort_btn.Image = ((System.Drawing.Image)(resources.GetObject("Calc_effort_btn.Image")));
+            this.Calc_effort_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Calc_effort_btn.Location = new System.Drawing.Point(730, 162);
+            this.Calc_effort_btn.Name = "Calc_effort_btn";
+            this.Calc_effort_btn.Size = new System.Drawing.Size(252, 60);
+            this.Calc_effort_btn.TabIndex = 31;
+            this.Calc_effort_btn.Text = "Calculate Effort";
+            this.Calc_effort_btn.UseVisualStyleBackColor = true;
+            this.Calc_effort_btn.Click += new System.EventHandler(this.Calc_effort_btn_Click);
+            // 
+            // Time_lbl
+            // 
+            this.Time_lbl.AutoSize = true;
+            this.Time_lbl.Font = new System.Drawing.Font("Ebrima", 12F);
+            this.Time_lbl.Location = new System.Drawing.Point(34, 267);
+            this.Time_lbl.Name = "Time_lbl";
+            this.Time_lbl.Size = new System.Drawing.Size(20, 28);
+            this.Time_lbl.TabIndex = 40;
+            this.Time_lbl.Text = "-";
+            // 
+            // Effort_lbl
+            // 
+            this.Effort_lbl.AutoSize = true;
+            this.Effort_lbl.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Effort_lbl.Location = new System.Drawing.Point(34, 191);
+            this.Effort_lbl.Name = "Effort_lbl";
+            this.Effort_lbl.Size = new System.Drawing.Size(20, 28);
+            this.Effort_lbl.TabIndex = 39;
+            this.Effort_lbl.Text = "-";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Ebrima", 12F);
+            this.label28.Location = new System.Drawing.Point(19, 108);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(113, 28);
+            this.label28.TabIndex = 41;
+            this.label28.Text = "Project Size";
+            // 
+            // Exit_btn
+            // 
+            this.Exit_btn.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exit_btn.Image = ((System.Drawing.Image)(resources.GetObject("Exit_btn.Image")));
+            this.Exit_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Exit_btn.Location = new System.Drawing.Point(48, 684);
+            this.Exit_btn.Name = "Exit_btn";
+            this.Exit_btn.Size = new System.Drawing.Size(160, 47);
+            this.Exit_btn.TabIndex = 32;
+            this.Exit_btn.Text = "Exit";
+            this.Exit_btn.UseVisualStyleBackColor = true;
+            // 
             // Intermediate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1359, 732);
+            this.ClientSize = new System.Drawing.Size(1740, 854);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "Intermediate";
             this.Text = "Intermediate Model";
+            this.Load += new System.EventHandler(this.Intermediate_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -807,8 +966,20 @@ namespace COCOMO_Backup
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox kloc2_txt;
-        private System.Windows.Forms.ComboBox Type2_txt;
+        private System.Windows.Forms.ComboBox Type2_cmb;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label TimeL;
+        private System.Windows.Forms.Button CalculateTime_btn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox Time_txt;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox effortRes_txt;
+        private System.Windows.Forms.Label type_lbl;
+        private System.Windows.Forms.Button Calc_effort_btn;
+        private System.Windows.Forms.Label Time_lbl;
+        private System.Windows.Forms.Label Effort_lbl;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button Exit_btn;
     }
 }

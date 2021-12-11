@@ -18,7 +18,12 @@ namespace COCOMO_Backup
         {
 
 
-            float EAF = CostDrivers.appExperience[PersonAtt2_cmb.SelectedIndex] * CostDrivers.reliability[ProAtt1_cmb.SelectedIndex];
+            float EAF = CostDrivers.reliability[ProAtt1_cmb.SelectedIndex] * CostDrivers.databaseSize[ProAtt1_cmb.SelectedIndex] * CostDrivers.productComplexity[ProAtt3_cmb.SelectedIndex]
+            * CostDrivers.performance[HardAtt1_cmb.SelectedIndex] * CostDrivers.memory[HardAtt2_cmb.SelectedIndex] * CostDrivers.volatility[HardAtt3_cmb.SelectedIndex] * CostDrivers.turnaboutTime[HardAtt4_cmb.SelectedIndex]
+            * CostDrivers.analystCapability[PersonAtt1_cmb.SelectedIndex] * CostDrivers.appExperience[PersonAtt2_cmb.SelectedIndex] * CostDrivers.engCapability[PersonAtt3_cmb.SelectedIndex]
+            * CostDrivers.vmExpericence[PersonAtt4_cmb.SelectedIndex] * CostDrivers.progammingLangExp[PersonAtt5_cmb.SelectedIndex] * CostDrivers.SWEmethods[ProjectAtt1_cmb.SelectedIndex] *
+            CostDrivers.softwareTools[ProjectAtt2_cmb.SelectedIndex] * CostDrivers.devSchedule[ProjectAtt3_cmb.SelectedIndex];
+
 
             return EAF;
         }
@@ -46,6 +51,27 @@ namespace COCOMO_Backup
         {
             return EAF * effort;
         }
+        float[] organic = { 2.4f, 1.05f, 2.5f, 0.38f };
+        float[] semi_detached = { 3.0f, 1.12f, 2.5f, 0.35f };
+        float[] embedded = { 3.6f, 1.20f, 2.5f, 0.32f };
+        float calc_effort(string type, int kloc)
+        {
+            
+            float effort;
+            if (type == "Organic")
+            {
+                effort = (float)(organic[0] * Math.Pow(kloc, organic[1]));
+            }
+            else if (type == "Semi_detached")
+            {
+                effort = (float)(semi_detached[0] * Math.Pow(kloc, semi_detached[1]));
+            }
+            else
+            {
+                effort = (float)(embedded[0] * Math.Pow(kloc, embedded[1]));
+            }
+            return effort;
+        }
         private void set_background(Object sender, PaintEventArgs e)
         {
             Graphics graph = e.Graphics;
@@ -69,7 +95,7 @@ namespace COCOMO_Backup
         private void button2_Click(object sender, EventArgs e)
         {
             int kloc = int.Parse(kloc2_txt.Text);
-            string mode = Type2_txt.SelectedItem.ToString().ToLower();
+            string mode = Type2_cmb.SelectedItem.ToString().ToLower();
 
             float effort = calc_Initial_Effort_IntermeditateCocomo(mode, kloc);
 
@@ -78,6 +104,65 @@ namespace COCOMO_Backup
             ActualEff_txt.Text = calActualEffort(EAF, effort).ToString();
             approxEff_txt.Text = Math.Ceiling(float.Parse(ActualEff_txt.Text)).ToString();
             IntialEst_txt.Text = effort.ToString();
+        }
+
+        private void Calc_effort_btn_Click(object sender, EventArgs e)
+        {
+            int kloc = int.Parse(kloc2_txt.Text);
+            string mode = Type2_cmb.SelectedItem.ToString();
+            float effort = calc_effort(mode, kloc);
+            Effort_lbl.Text = mode;
+            effortRes_txt.Text = effort.ToString();
+        }
+
+        private void CalculateTime_btn_Click(object sender, EventArgs e)
+        {
+            int kloc = int.Parse(kloc2_txt.Text);
+            string type = Type2_cmb.SelectedItem.ToString();
+
+            float effort = calc_effort(type, kloc);
+
+            float time;
+            if (type == "Organic")
+            {
+                time = (float)(organic[2] * Math.Pow(effort, organic[3]));
+
+            }
+            else if (type == "Semi_detached ")
+            {
+                time = (float)(semi_detached[2] * Math.Pow(effort, semi_detached[3]));
+
+            }
+            else
+            {
+                time = (float)(embedded[2] * Math.Pow(effort, embedded[3]));
+
+            }
+            Time_lbl.Text = type;
+            Time_txt.Text = time.ToString();
+
+        }
+
+        private void Intermediate_Load(object sender, EventArgs e)
+        {
+            ProAtt1_cmb.SelectedItem = "Nominal";
+            ProAtt2_cmb.SelectedItem = "Nominal";
+            ProAtt3_cmb.SelectedItem = "Nominal";
+
+            HardAtt1_cmb.SelectedItem = "Nominal";
+            HardAtt2_cmb.SelectedItem = "Nominal";
+            HardAtt3_cmb.SelectedItem = "Nominal";
+            HardAtt4_cmb.SelectedItem = "Nominal";
+
+            PersonAtt1_cmb.SelectedItem = "Nominal";
+            PersonAtt2_cmb.SelectedItem = "Nominal";
+            PersonAtt3_cmb.SelectedItem = "Nominal";
+            PersonAtt4_cmb.SelectedItem = "Nominal";
+            PersonAtt5_cmb.SelectedItem = "Nominal";
+
+            ProjectAtt1_cmb.SelectedItem = "Nominal";
+            ProjectAtt2_cmb.SelectedItem = "Nominal";
+            ProjectAtt3_cmb.SelectedItem = "Nominal";
         }
     }
 }

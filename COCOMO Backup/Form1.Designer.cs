@@ -67,13 +67,13 @@ namespace COCOMO_Backup
             this.panel1.Controls.Add(this.Calc_effort_btn);
             this.panel1.Location = new System.Drawing.Point(33, 17);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1296, 465);
+            this.panel1.Size = new System.Drawing.Size(1007, 465);
             this.panel1.TabIndex = 17;
             // 
             // CalculateTime_btn
             // 
             this.CalculateTime_btn.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CalculateTime_btn.Location = new System.Drawing.Point(678, 373);
+            this.CalculateTime_btn.Location = new System.Drawing.Point(657, 301);
             this.CalculateTime_btn.Name = "CalculateTime_btn";
             this.CalculateTime_btn.Size = new System.Drawing.Size(328, 60);
             this.CalculateTime_btn.TabIndex = 20;
@@ -96,7 +96,7 @@ namespace COCOMO_Backup
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Ebrima", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1174, 204);
+            this.label4.Location = new System.Drawing.Point(475, 301);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 23);
             this.label4.TabIndex = 19;
@@ -109,9 +109,9 @@ namespace COCOMO_Backup
             this.Time_txt.Enabled = false;
             this.Time_txt.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Time_txt.ForeColor = System.Drawing.Color.Black;
-            this.Time_txt.Location = new System.Drawing.Point(820, 196);
+            this.Time_txt.Location = new System.Drawing.Point(185, 293);
             this.Time_txt.Name = "Time_txt";
-            this.Time_txt.Size = new System.Drawing.Size(328, 35);
+            this.Time_txt.Size = new System.Drawing.Size(225, 35);
             this.Time_txt.TabIndex = 18;
             // 
             // label2
@@ -191,7 +191,7 @@ namespace COCOMO_Backup
             // Calc_effort_btn
             // 
             this.Calc_effort_btn.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Calc_effort_btn.Location = new System.Drawing.Point(128, 373);
+            this.Calc_effort_btn.Location = new System.Drawing.Point(657, 200);
             this.Calc_effort_btn.Name = "Calc_effort_btn";
             this.Calc_effort_btn.Size = new System.Drawing.Size(217, 60);
             this.Calc_effort_btn.TabIndex = 0;
@@ -242,7 +242,7 @@ namespace COCOMO_Backup
             // 
             this.TimeL.AutoSize = true;
             this.TimeL.Font = new System.Drawing.Font("Ebrima", 12F);
-            this.TimeL.Location = new System.Drawing.Point(664, 203);
+            this.TimeL.Location = new System.Drawing.Point(23, 283);
             this.TimeL.Name = "TimeL";
             this.TimeL.Size = new System.Drawing.Size(20, 28);
             this.TimeL.TabIndex = 21;

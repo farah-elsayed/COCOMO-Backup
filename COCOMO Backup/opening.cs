@@ -32,5 +32,11 @@ namespace COCOMO_Backup
         {
 
         }
+
+        private void Start_btn_Click(object sender, EventArgs e)
+        {
+            Intermediate i = new Intermediate();
+            i.Show();
+        }
     }
 }
